@@ -5,7 +5,7 @@ var app = new Vue({
         image: './img/1.jpg',
         desc: 'Esta bota fue usada por el mismisimo Napoleon Bonaparte',
         link: 'https://v2.vuejs.org/v2/guide/',
-        outStock: true,
+        outStock: false,
         details: ['80% cotton', '20% poliester', 'Gender neutral'],
         variants: [
             {
