@@ -1,0 +1,69 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <canvas width="600" height="400"> </canvas>
+
+</head>
+
+<body>
+    <script>
+        var radio = 20;
+        var xAleatorio;
+        var yAleatorio;
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+        pincel.fillStyle = "grey";
+        pincel.fillRect(0, 0, 600, 400);
+
+        function disenharCircunferencia(x, y, radio, color) {
+            pincel.fillStyle = color;
+            pincel.beginPath();
+            pincel.arc(x, y, radio, 0, 2 * Math.PI);
+            pincel.fill();
+        }
+
+        function limpiarPantalla() {
+            pincel.clearRect(0, 0, 600, 400);
+
+        }
+
+        function disenharObjetivo(x, y) {
+            disenharCircunferencia(x, y, radio + 40, "red")
+            disenharCircunferencia(x, y, radio + 20, "white")
+            disenharCircunferencia(x, y, radio, "red")
+        }
+        function actualizarPantalla() {
+            limpiarPantalla();
+            xAleatorio = Math.random() * 500;
+            yAleatorio = Math.random() * 300;
+            disenharObjetivo(xAleatorio, yAleatorio)
+            x++;
+        }
+
+        setInterval(actualizarPantalla,1000);
+
+        function disparar(event) {
+            var x = event.pageX - pantalla.offsetLeft;
+            var y = event.pageY - pantalla.offsetTop;
+
+            if ((x < xAleatorio + radio) &&
+                (x > xAleatorio - radio) &&
+                (y < yAleatorio + radio) &&
+                (y > yAleatorio - radio)){
+
+                alert("tiro certero");
+
+            }
+
+
+        }
+        pantalla.onclick = disparar;
+
+    </script>
+</body>
+
+</html>
