@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<canvas width="600" height="600"> </canvas>
+</head>
+
+<body>
+
+	<script>
+		function dibujarCuadrado(x,y, color){
+			var pantalla = document.querySelector("canvas");
+			var pincel = pantalla.getContext("2d");
+			pincel.fillStyle = color;
+			pincel.fillRect(x, y, 100, 100);
+
+		}
+
+		for(i = 0; i<600; i=i+100){
+			dibujarCuadrado(i,0,"red");
+			dibujarCuadrado(0,i+100,"green");
+			dibujarCuadrado(100,i,"blue");
+		}
+
+
+	</script>
+
+</body>
+
+</html>

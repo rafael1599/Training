@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de edades</title>
+</head>
+<body>
+    <h1>Calculando la diferencia en nuestras edades</h1>
+
+    <script>
+        function saltarLinea() {
+            document.write("<br>");    
+            document.write("<br>");    
+            document.write("<br>");
+            document.write("<hr>");    
+            document.write("<br>");    
+            document.write("<br>");
+        }  
+        function imprimir(frase) {
+            document.write("<big>"+frase+"</big>");
+            saltarLinea();
+        }
+        
+        function calcularIMC(peso, altura){ 
+            return peso/(altura*altura); 
+        }
+
+        // este código calcula el INDICE DE MASA CORPORAL (IMC) 
+        imprimir("El promedio del indice de masa corporal es: " + (calcularIMC(71,1.60) + calcularIMC(80,1.64))/2);
+    </script>
+</body>
+</html>
