@@ -1,0 +1,32 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <canvas id="flag" width="300" height="100"></canvas>
+    <title>Perú</title>
+</head>
+
+<body>
+
+    <div id="flag">
+        <div class="stripe red"></div>
+        <div class="stripe white"></div>
+        <div class="stripe green"></div>
+    </div>
+    <script>
+        const canvas = document.getElementById("flag");
+        const ctx = canvas.getContext("2d");
+
+        // dibujar la franja roja
+        ctx.fillStyle = "#ff0000"; // rojo
+        ctx.fillRect(0, 0, canvas.height, canvas.width / 3);
+
+        ctx.fillStyle = "#ff0000"; // rojo
+        ctx.fillRect(400, 0, 200, 400);
+    </script>
+</body>
+
+</html>
