@@ -1,6 +1,145 @@
-body{
-    background-color: rebeccapurple;
+body {
+  background-color: #e5e5e5;
 }
 
+.input__desc{
+    position: relative;
+    top: 100px;
+    left: 360px;
+}
+
+.input__txtArea {
+  border: 0ch;
+  /* Rectangle 1 */
+  position: absolute;
+  width: 890px;
+  height: 450px;
+  left: 40px;
+  top: 40px;
+
+  background: #e5e5e5;
+}
+
+
+
+.btn{
+    left: 150px;
+    position: relative;
+    top: 450px;
+    display: inline-block;
+}
+.btn__Dec {
+  /* Button */
+  box-sizing: border-box;
+
+  /* Auto layout */
+  flex-direction: row;
+  padding: 24px;
+  gap: 8px;
+  width: 328px;
+  height: 67px;
+
+  /* Light gray */
+  background: #d8dfe8;
+  /* Dark blue/dark-blue-300 */
+  border: 1px solid #0a3871;
+  border-radius: 24px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.btn__Enc {
+  /* Button */
+  /* Auto layout */
+  flex-direction: row;
+  padding: 24px;
+  gap: 8px;
+  width: 328px;
+  height: 67px;
+
+  /* Dark blue/dark-blue-300 */
+  background: #0a3871;
+  border: 1px solid #0a3871;
+
+  border-radius: 24px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.res {
+  /* Rectangle 1 */
+  position: absolute;
+  width: 400px;
+  height: 944px;
+  left: 1000px;
+  top: 40px;
+
+  /* White */
+  background: #ffffff;
+  /* shadow */
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  border-radius: 15px;
+}
+
+.res__title {
+  /* Ningún mensaje fue encontrado */
+
+  width: 336px;
+  height: 58px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  /* or 29px */
+
+  text-align: center;
+
+  /* Gray/gray-500 */
+
+  color: #343a40;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  width: 250;
+}
+
+.res__desc {
+  /* Ingresa el texto que desees encriptar o desencriptar. */
+
+  width: 336px;
+  height: 48px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  /* or 24px */
+
+  text-align: center;
+
+  /* Gray/gray-400 */
+
+  color: #495057;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  width: 250;
+}
 
 

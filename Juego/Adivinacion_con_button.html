@@ -24,7 +24,11 @@
             var button = document.querySelector("button");
             var numeroLanzado = document.querySelector("input"); 
             var numeroPensado = sorteo(10);
-            button.onclick = verificar
+
+            function verificar(){
+                print("funciona!!");
+            }
+            button.onclick = verificar;
             
             if(parseInt(numeroLanzado.value) > 10){
                 alert("Usted ingresó un numero superior a 10, intentelo de nuevo");
