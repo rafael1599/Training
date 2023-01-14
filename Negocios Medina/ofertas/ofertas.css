@@ -558,10 +558,12 @@ body{
   bottom: 12px;
 }
 .bt2{
-  top:40px;
+  top:50px;
   text-align: center;
+  height: 50px;
 }
 .bt2 p{
+  padding-top: 10px;
   font-size: large;
   color: white;
 }

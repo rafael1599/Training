@@ -558,10 +558,13 @@ body{
   .bt2{
     top:40px;
     text-align: center;
+    height: 50px;
   }
   .bt2 p{
-    font-size: large;
-    color: white;
+      padding-top: 10px;
+      font-size: large;
+      color: white;
+  
   }
   
   .sn{
