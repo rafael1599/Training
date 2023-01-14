@@ -8,7 +8,7 @@ body {
   text-align: center;
   border: 0ch;
   /* Rectangle 1 */
-  position: absolute;
+  position: relative;
   width: 50%;
   height: 70%;
   left: 5%;
@@ -23,10 +23,16 @@ body {
     width: 100%;
     left: 5%;
     position: relative;
-    top: 450px;
+    padding-top: 3%;
     display: inline-block;
 }
 
+.btn input{
+  font-size: 20px;
+}
+.btn div{
+  padding: 10px;
+}
 .btn__Dec {
   /* Button */
   box-sizing: border-box;
