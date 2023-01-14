@@ -2,13 +2,10 @@ body {
   background-color: #e5e5e5;
 }
 
-.input__desc{
-    position: relative;
-    top: 100px;
-    left: 360px;
-}
+
 
 .input__txtArea {
+  text-align: center;
   border: 0ch;
   /* Rectangle 1 */
   position: absolute;
