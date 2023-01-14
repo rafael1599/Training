@@ -201,55 +201,53 @@ main {
     width: 100px;
 }
 
-
 .content__title {
-    padding-bottom: 60px;
-    text-align: center;
-    font-size: 6rem;
-    text-align: center;
-    color: #fcedd8;
-    font-family: 'Niconne', cursive;
-    font-weight: 700;
-    text-shadow: 5px 5px 0px #eb452b,
-        10px 10px 0px #efa032,
-        15px 15px 0px #46b59b,
-        20px 20px 0px #017e7f,
-        25px 25px 0px #052939,
-        30px 30px 0px #c11a2b,
-        35px 35px 0px #c11a2b,
-        40px 40px 0px #c11a2b,
-        45px 45px 0px #c11a2b;
+    font-family: Unica One, sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-transform: uppercase;
 }
 
 .content {
-    color: #1f2223;
+    border-radius: 5px;
+    color: #000000;
     text-align: center;
     text-decoration: none;
     font-family: 'Niconne', cursive;
-    font-size: 1.2rem;
+    font-size: 17.5609756098px;
     line-height:1.3;
+}
+
+.content h1 {
+    padding: 40px;
+    background-color: #30dd92;
 }
 .content__mision{
     line-height:1.3;
     font-size: 1.2rem;
     font-family: 'Niconne', cursive;
 }
+
 .content__mainImage {
     width: 90%;
     margin: 50px;
 }
 
-.content__button-mail {
+.content__button-mail{
+    color: black;
+    background-color: white; 
+    border: 2px solid #48487f;
     width: 112px;
     height: 50;
-    border: 0px;
     font-family: "Hind", sans-serif;
     font-weight: 500;
-    background-color: #48487f;
     margin: 20px;
 }
 
-.content__button-mail p{
+.content__button-mail:hover{
+    background-color: #48487f;
     color: white;
 }
 
@@ -277,12 +275,11 @@ main {
 }
 
 .options .options__library {
-    width: 60%;
+    width: 50%;
 }
 
 .options li:hover {
     background-color: #66506d;
-    color: white;
 }
 
 .options li:hover h2{
@@ -301,7 +298,7 @@ main {
 	box-sizing: border-box;
 	width: 100%;
 	text-align: left;
-	font: bold 16px sans-serif;
+	font: bold 17.5609756098px sans-serif;
 	padding: 55px 50px;
 }
 
@@ -341,7 +338,7 @@ main {
 .footer-distributed .footer-links a{
 	display:inline-block;
 	line-height: 1.8;
-  font-weight:400;
+    font-weight:400;
 	text-decoration: none;
 	color:  inherit;
 }
