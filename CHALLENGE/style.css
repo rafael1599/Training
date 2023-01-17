@@ -33,7 +33,7 @@ body {
 .btn div{
   padding: 10px;
 }
-.btn__Dec {
+.btn__dec {
   /* Button */
   box-sizing: border-box;
 
@@ -57,7 +57,7 @@ body {
 }
 
 
-.btn__Enc {
+.btn__enc {
   /* Button */
   color: #ffffff;
   /* Auto layout */
