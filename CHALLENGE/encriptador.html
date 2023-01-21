@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width" , initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    
-    
+
+
     <title>Encriptador</title>
 </head>
 
@@ -14,26 +13,31 @@
     <main>
         <div class="input">
             <input class="input__txtArea" type="text" placeholder="Ingresa el texto aqui">
-            
+
             <div class="btn">
                 <div>
                     <img src="./img/important.png" alt="?"> Solo letras minusculas y sin acentos
                 </div>
                 <input class="btn__enc" type="button" value="Encriptar">
-                <input type="button"  class="btn__dec" value="Desencriptar">
+                <input type="button" class="btn__dec" value="Desencriptar">
+            </div>
         </div>
-    </div>
-    
-    <div class="res">
-        <p class="res__output"><img src="./img/image.png" alt="??">
-            <h2 class="res__title">Ningun mensaje fue encriptado</h2>
-            <h1 class="res__desc">Ingresa el texto a encriptar o desencriptar</h1>
-        </p>
+
+        <div class="res">
+            <div class="ress__notFound">
+                <p class="res__notFound__output"><img src="./img/image.png" alt="??">
+                <h2 class="res__notFound__title">Ningun mensaje fue encriptado</h2>
+                <h1 class="res__notFound__desc">Ingresa el texto a encriptar o desencriptar</h1>
+                </p>
+            </div>
         </div>
-        
-        
-        
+
+
+
+
     </main>
+    <link rel="stylesheet" href="style.css">
+
     <script src="javascript.js"></script>
 </body>
 

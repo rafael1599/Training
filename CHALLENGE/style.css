@@ -95,11 +95,15 @@ body {
   border-radius: 15px;
 }
 
-.res__output img{
+.ress__notFound.hide{
+display: none;
+}
+
+.res__notFound__output img{
   width: 95%;
 }
 
-.res__title {
+.res__notFound__title {
   /* Ningún mensaje fue encontrado */
 
   text-align: center;
@@ -124,8 +128,9 @@ body {
   flex-grow: 0;
 }
 
-.res__desc {
+.res__notFound__desc {
   /* Ingresa el texto que desees encriptar o desencriptar. */
+  display: active;
   margin: auto;
   width: 90%;
   height: 48px;
