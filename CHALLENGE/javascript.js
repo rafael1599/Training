@@ -1,16 +1,22 @@
 let encrButton = document.querySelector('.btn__enc');
-encrButton.addEventListener("click", showEncrMessage);
+encrButton.addEventListener("click", checkInputAndShowValue);
 
-let input = document.querySelector(".input__txtArea");
-let out = document.getElementsByClassName(".res__output");
+let notFoundMessage = document.getElementsByClassName("res__notFound")[0];
+let out = document.getElementsByClassName("res__found")[0];
+let inputText = document.querySelector(".input__txtArea");
+let phrase = "Mensaje no encontrado";
+
+function checkInputAndShowValue() {
+   if (inputText.value.trim() === "") {
+       alert("El campo de texto está vacío, ingrese un valor antes de continuar");
+       return;
+   }
+   showEncrMessage();
+}
 
 function showEncrMessage() {
-   let notFoundMessage = document.getElementsByClassName("ress__notFound")[0];
    notFoundMessage.classList.add("hide");
-
-   let out = document.getElementsByClassName("res__output");
-   const valor = input.value;
-   out.innerHTML = input.value;
-
-   console.log(valor);
+   phrase = inputText.value;
+   console.log(phrase);
+   out.textContent = phrase;
 }

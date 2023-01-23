@@ -13,7 +13,6 @@ body {
   height: 70%;
   left: 5%;
   top: 40px;
-
   background: #e5e5e5;
 }
 
@@ -81,6 +80,7 @@ body {
 
 
 .res {
+  display: grid;
   /* Rectangle 1 */
   position: absolute;
   width: 30%;
@@ -93,9 +93,10 @@ body {
   /* shadow */
   box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
   border-radius: 15px;
+  /* align-items: center; */
 }
 
-.ress__notFound.hide{
+.res__notFound.hide{
 display: none;
 }
 
@@ -103,25 +104,26 @@ display: none;
   width: 95%;
 }
 
+
 .res__notFound__title {
   /* Ningún mensaje fue encontrado */
-
+  
   text-align: center;
   width: 100%;
-
+  
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 120%;
   /* or 29px */
-
+  
   /* Gray/gray-500 */
-
+  
   color: #343a40;
-
+  
   /* Inside auto layout */
-
+  
   flex: none;
   order: 0;
   align-self: stretch;
@@ -134,24 +136,40 @@ display: none;
   margin: auto;
   width: 90%;
   height: 48px;
-
+  
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
   /* or 24px */
-
+  
   text-align: center;
-
+  
   /* Gray/gray-400 */
-
+  
   color: #495057;
-
+  
   /* Inside auto layout */
-
+  
   order: 1;
   flex-grow: 0;
 }
 
+.res__found{
+  position: relative;
+  display: active;
+  margin: auto;
+  width: 90%;
+  height: 48px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: #495057;
+  order: 1;
+  flex-grow: 0;
+}
 
