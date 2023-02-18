@@ -1,0 +1,175 @@
+body {
+  background-color: #e5e5e5;
+}
+
+
+
+.input__txtArea {
+  text-align: center;
+  border: 0ch;
+  /* Rectangle 1 */
+  position: relative;
+  width: 50%;
+  height: 70%;
+  left: 5%;
+  top: 40px;
+  background: #e5e5e5;
+}
+
+
+
+.btn{
+    width: 100%;
+    left: 5%;
+    position: relative;
+    padding-top: 3%;
+    display: inline-block;
+}
+
+.btn input{
+  font-size: 20px;
+}
+.btn div{
+  padding: 10px;
+}
+.btn__dec {
+  /* Button */
+  box-sizing: border-box;
+
+  /* Auto layout */
+  flex-direction: row;
+  padding: 24px;
+  gap: 8px;
+  width: 25%;
+  height: 67px;
+
+  /* Light gray */
+  background: #d8dfe8;
+  /* Dark blue/dark-blue-300 */
+  border: 1px solid #0a3871;
+  border-radius: 24px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+
+.btn__enc {
+  /* Button */
+  color: #ffffff;
+  /* Auto layout */
+  flex-direction: row;
+  padding: 24px;
+  gap: 8px;
+  width: 25%;
+  height: 67px;
+
+  /* Dark blue/dark-blue-300 */
+  background: #0a3871;
+  border: 1px solid #0a3871;
+
+  border-radius: 24px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+
+.res {
+  display: grid;
+  /* Rectangle 1 */
+  position: absolute;
+  width: 30%;
+  height: 90%;
+  left: 65%;
+  top: 40px;
+
+  /* White */
+  background: #ffffff;
+  /* shadow */
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  border-radius: 15px;
+  /* align-items: center; */
+}
+
+.res__notFound.hide{
+display: none;
+}
+
+.res__notFound__output img{
+  width: 95%;
+}
+
+
+.res__notFound__title {
+  /* Ningún mensaje fue encontrado */
+  
+  text-align: center;
+  width: 100%;
+  
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  /* or 29px */
+  
+  /* Gray/gray-500 */
+  
+  color: #343a40;
+  
+  /* Inside auto layout */
+  
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.res__notFound__desc {
+  /* Ingresa el texto que desees encriptar o desencriptar. */
+  display: active;
+  margin: auto;
+  width: 90%;
+  height: 48px;
+  
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  /* or 24px */
+  
+  text-align: center;
+  
+  /* Gray/gray-400 */
+  
+  color: #495057;
+  
+  /* Inside auto layout */
+  
+  order: 1;
+  flex-grow: 0;
+}
+
+.res__found{
+  position: relative;
+  display: active;
+  margin: auto;
+  width: 90%;
+  height: 48px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: #495057;
+  order: 1;
+  flex-grow: 0;
+}
+
