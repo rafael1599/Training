@@ -188,11 +188,12 @@ body {
 .videoSobre-sobre-title {
 	font-size: 1.2em;
 	font-weight: bolder;
-}
+} 
 
 .videoSobre-sobre {
 	font-size: 1.3em;
 	line-height: 2;
+	margin-left: 10px;
 }
 
 .videoSobre-button {
@@ -250,7 +251,7 @@ body {
 	}
 
 	.rodapePrincipal-contatoForm {
-		margin-top: 10;
+		margin-top: 10px;
 		text-align: left;
 	}
 
@@ -285,9 +286,6 @@ body {
 		margin-left: 0;
 	}
 
-	.videoSobre-sobre {
-		margin-left: 1.5em;
-	}
 
 }
 
