@@ -1,6 +1,6 @@
 --- HEAD ---
 
-Texto alternativo del logo: Logo de Apeperia
+Texto alternativo del logo: Logo de confi
 
 Sobre
 Planes
@@ -13,7 +13,7 @@ Contacto
 
 Aplicaciones en la medida
 
-Apeperia es una empresa emergente con una manera inovadora de comprar y crear aplicaciones móviles y web.
+confi es una empresa emergente con una manera inovadora de comprar y crear aplicaciones móviles y web.
 
 Conozca los planes
 
@@ -46,7 +46,7 @@ Sobre nosotros
 
 ¡Creamos aplicaciones personalizados para todas las personas!
 
-La manutención de una aplicación no puede ser un custo extra para el cliente. En Apeperia firmas nuestro servicio la manutención ya se incluye en el servicio. De esa manera no te preocupes con la atualización, es por cuenta de nosotros.
+La manutención de una aplicación no puede ser un custo extra para el cliente. En confi firmas nuestro servicio la manutención ya se incluye en el servicio. De esa manera no te preocupes con la atualización, es por cuenta de nosotros.
 
 ¡Tenemos un equipo especializado y exclusivo para proyectos increíbles!
 
@@ -87,13 +87,13 @@ Entre en contacto
 
 --- Institucional ---
 
-Un poco más sobre Apeperia
+Un poco más sobre confi
 
 Calle Vergueiro, 3185
 Villa Mariana, São Paulo
 
 +55 11 55712751 o
-contato@apeperia.com
+contato@confi.com
 
 --- FOOTER ---
 

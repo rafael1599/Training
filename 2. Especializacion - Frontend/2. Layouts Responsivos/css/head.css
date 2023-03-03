@@ -1,5 +1,5 @@
 .head {
-    color: #FFFFFF;
+    color: var(--background-blanco);
 
     width: 100%;
 
@@ -12,9 +12,9 @@
     padding-top: .75rem;
     padding-bottom: .75rem;
 
-    border-bottom: 1px solid #103D4A;
-
     position: absolute;
+
+    background-color: var(--background-llamada-mobile);
 }
 
 .head__logo {
@@ -23,6 +23,7 @@
 
 .head__navegacion {
     text-align: center;
+    border-bottom: 1.5px solid var(--border-cabecera-mobile);
 }
 
 .head__enlace {
@@ -31,6 +32,6 @@
     display: inline-block;
 
     margin-right: .7rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: .7rem;
     margin-left: .7rem;
 }
