@@ -1,7 +1,7 @@
 const paisesDisponibles = ["Peru","Mexico","Colombia", "Brazil"];
 
-function print(variable){
-    console.log(variable);
+function print(mensaje){
+    console.log(mensaje);
 }
 print(paisesDisponibles);
 paisesDisponibles.splice(1,1,"Chile");
