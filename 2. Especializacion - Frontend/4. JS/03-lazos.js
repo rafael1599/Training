@@ -25,16 +25,25 @@ const presupuestoDisponible = 5000;
 
 let i = 0;
 
-while(i < datos.length && datos[i].precio > presupuestoDisponible){
+// while(i < datos.length && datos[i].precio > presupuestoDisponible){
+//     i++;
+// }
+
+
+do{
+    if(datos[i].precio < presupuestoDisponible){
+        ciudadSeleccionada = datos[i].cuidad;
+    }
     i++;
 }
 
-if (i == datos.length)
-    print("No tenemos pasajes disponibles");
-    else
-    print("Puedes comprar tu pasaje para: " + datos[i].cuidad);
-
-
+while(ciudadSeleccionada != i < datos.length ){
+    i++;
+    if (i == datos.length)
+        print("No tenemos pasajes disponibles");
+        else
+        print("Puedes comprar tu pasaje para: " + datos[i].cuidad);
+}
 
 
 
