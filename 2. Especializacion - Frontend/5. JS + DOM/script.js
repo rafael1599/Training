@@ -1,3 +1,4 @@
+( () => {
 const btn = document.querySelector('[data-form-btn]');
 
 const createTask = (evento) => {
@@ -68,3 +69,5 @@ const completeTask =(event) => {
 function print(mensaje) {
     console.log(mensaje);
 }
+
+})();
