@@ -1,7 +1,12 @@
 const btn = document.querySelector('[data-form-btn]');
-btn.addEventListener("click", function(){
-    print("prueba para crear tarea")
-})
+
+const createTask = (evento)=>{
+    evento.preventDefault();
+    const input = document.querySelector('[data-form-input]');
+    print(input.value);
+}
+
+btn.addEventListener("click", createTask);
 
 
 
