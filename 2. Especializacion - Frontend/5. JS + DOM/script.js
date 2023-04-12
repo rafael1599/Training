@@ -4,6 +4,31 @@ btn.addEventListener("click", function(){
 })
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function print(mensaje){
     console.log(mensaje);
 }
