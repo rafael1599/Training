@@ -1,8 +1,60 @@
-const inputNacimiento = document.querySelector("#birth");
+export function valida(input){
+    const tipoInput = input.dataset.tipo;
+    if(validadores[tipoDeInput]) {
+        validadores[tipoDeInput](input);
+    }
 
-inputNacimiento.addEventListener("blur", (evento) => {
-    validarNacimiento(evento.target);
-});
+    if(input.validity.valid){
+        input.parentElement.classList.remove("input-container --invalid");
+        input.parentElement.querySelector(".input-message-error").innerHTML = "";
+    }else{
+        input.parentElement.classList.add("input-container --invalid")
+        input.parentElement.querySelector(".input-message-error").innerHTML = mostrarMensajeDeError;
+
+    }
+
+}
+
+const mensajesDeError = {
+    nombre: {
+        valueMissing: "Este campo no puede estar vacio"
+
+    },
+    email:{
+        valueMissing: "Este campo no puede estar vacio",
+        typeMismatch: "El correo no es valido"
+    },
+    password:{
+        valueMissing: "Este campo no puede estar vacio",
+        patternMismatch: "Al menos 6 caracteres, maximo 12, debe contener una letra mayuscula, una minuscula, un numero y sin caracteres especiales."
+    },
+    nacimiento:{
+        valueMissing: "Este campo no puede estar vacio",
+        customError: "Debes tener al menos 18 years de edad"
+    }
+}
+
+const tipoDeErrores = [
+    "valueMissing",
+    "typeMismatch",
+    "patternMismatch",
+    "customError"
+]
+
+const validadores = {
+    nacimiento: input => validarNacimiento(input)
+}
+
+function mostrarMensajeDeError(tipoDeInput, input){
+    let mensaje = "";
+    tipoDeErrores.forEach(error => {
+        if(input.validity[error]){
+            print(error);
+            print(input.validity[error]);
+            print(mensajesDeError[tipoDeInput][error]);
+        }
+    })
+}
 
 function validarNacimiento(input){
     const fechaCliente = new Date(input.value);
