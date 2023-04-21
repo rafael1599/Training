@@ -9,9 +9,9 @@ class cuentaCorriente{
     agencia;
 
     constructor(){
-        numero = '';
-        saldo = 0;
-        agencia = '';
+        this.saldo = 0;
+        this.numero = '';
+        this.agencia = '';
         
     }
 
@@ -19,7 +19,12 @@ class cuentaCorriente{
         this.saldo += valor;
     }
     retiroDeCuenta(valor){
-        this.saldo = this.saldo - valor;
+        if(valor <= this.saldo){
+            this.saldo = this.saldo - valor;
+        }else{
+            print('No existen fondos suficientes, usted solo puede retirar como maximo: '+this.saldo)
+        }
+        
     }
 }
 
@@ -69,9 +74,11 @@ cuentaCorriente5.saldo = 5000;
 cuentaCorriente5.agencia = "5"
 
 cuentaCorriente1.depositoEnCuenta(2);
-cuentaCorriente1.retiroDeCuenta(4);
 print(cliente1);
-print(cuentaCorriente1.saldo)
+print(cuentaCorriente1.saldo);
+cuentaCorriente1.retiroDeCuenta(1003);
+print(cliente1);
+print(cuentaCorriente1.saldo);
 
 function print(mensaje){
     console.log(mensaje);
