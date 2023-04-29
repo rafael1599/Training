@@ -1,32 +1,6 @@
-class cliente{
-nombre;
-dni;
-}
+import {cuentaCorriente} from './CuentaCorriente.js';
+import {cliente} from './Cliente.js';
 
-class cuentaCorriente{
-    numero;
-    saldo;
-    agencia;
-
-    constructor(){
-        this.#saldo = 0;
-        this.numero = '';
-        this.agencia = '';
-        
-    }
-
-    depositoEnCuenta(valor){
-        this.#saldo += valor;
-    }
-    retiroDeCuenta(valor){
-        if(valor <= this.#saldo){
-            this.#saldo -= valor;
-        }else{
-            print('No existen fondos suficientes, usted solo puede retirar como maximo: '+this.saldo)
-        }
-        
-    }
-}
 
 const cliente1 = new cliente();
 cliente1.nombre = "Rafael";
@@ -73,12 +47,13 @@ cuentaCorriente5.numero = 6548432135456;
 cuentaCorriente5.saldo = 5000;
 cuentaCorriente5.agencia = "5"
 
-cuentaCorriente1.depositoEnCuenta(2);
-print(cliente1);
-print(cuentaCorriente1.saldo);
-cuentaCorriente1.retiroDeCuenta(1003);
-print(cliente1);
-print(cuentaCorriente1.saldo);
+
+saldo = cuentaCorriente1.depositoEnCuenta(200);
+print("El saldo actual es: "+saldo);
+
+saldo = cuentaCorriente1.retiroDeCuenta(1003);
+print("El saldo actual es: "+saldo);
+
 
 function print(mensaje){
     console.log(mensaje);
