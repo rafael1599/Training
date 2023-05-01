@@ -1,12 +1,13 @@
 import {cuentaCorriente} from './CuentaCorriente.js';
-import {cliente} from './Cliente.js';
-
+import { cliente } from './cliente.js';
 
 const cliente1 = new cliente();
+
 cliente1.nombre = "Rafael";
 cliente1.dni = 987655468;
 
 const cuentaCorriente1 = new cuentaCorriente();
+let saldo = cuentaCorriente1.verSaldo();
 cuentaCorriente1.numero = 6548442135845;
 cuentaCorriente1.saldo = 1000;
 cuentaCorriente1.agencia = "1";

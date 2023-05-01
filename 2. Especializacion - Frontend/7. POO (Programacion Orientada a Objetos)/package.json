@@ -1,12 +1,17 @@
 {
-  "name": "cuentasbanco",
+  "name": "banco1",
   "version": "1.0.0",
-  "description": "gestion de cuentas del banco popular",
+  "description": "Account management for a bank",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "keywords": [
+    "bank",
+    "accounts",
+    "clients"
+  ],
+  "author": "rafo1599",
   "license": "ISC",
   "type": "module"
 }

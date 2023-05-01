@@ -1,6 +1,6 @@
 export class cuentaCorriente{
     numero;
-    saldo;
+    #saldo;
     agencia;
 
     constructor(){
@@ -12,14 +12,15 @@ export class cuentaCorriente{
 
     depositoEnCuenta(valor){
         this.#saldo += valor;
+        return this.#saldo;
     }
+
     retiroDeCuenta(valor){
-        if(valor <= this.#saldo){
+        if(valor <= this.#saldo)
             this.#saldo -= valor;
-        }else{
-            print('No existen fondos suficientes, usted solo puede retirar como maximo: '+this.saldo)
-        }        
+        return this.#saldo;
     }
+
     verSaldo(){
         return this.#saldo;
     }
