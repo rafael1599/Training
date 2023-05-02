@@ -4,6 +4,7 @@ export class cuentaCorriente{
     numero;
     #saldo;
     agencia;
+    static cantidadCuentas = 0;
 
     set setCliente(value){
         if (value instanceof Cliente)
@@ -14,11 +15,12 @@ export class cuentaCorriente{
         return this.#cliente;
     }
 
-    constructor(){
-        this.cliente = null;
+    constructor(cliente, numero, agencia){
+        this.cliente = cliente;
+        this.numero = numero;
+        this.agencia = agencia;
         this.#saldo = 0;
-        this.numero = '';
-        this.agencia = '';
+        cuentaCorriente.cantidadCuentas++;
         
     }
 
