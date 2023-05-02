@@ -1,4 +1,5 @@
-export class cliente{
+export class Cliente{
     nombre;
     dni;
+    ruta;
     }
