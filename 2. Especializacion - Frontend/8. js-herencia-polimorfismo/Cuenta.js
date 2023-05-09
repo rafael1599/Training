@@ -3,6 +3,10 @@ export class Cuenta{
     #saldo;
 
     constructor(cliente, numero, agencia) {
+
+        if (this.constructor == Cuenta){
+            throw new Error('No se dee instanciar objetos de la clase Cuenta');
+        }
         this.tipo = tipo;
         this.cliente = cliente;
         this.numero = numero;
@@ -27,9 +31,13 @@ export class Cuenta{
     }
 
     retirarDeCuenta(valor) {
+       this._retirarDeCuente(valor, 0);
+    }
+    _retirarDeCuenta(valor, comision){
+        valor = valor * (1 + comision/100)
         if (valor <= this.#saldo)
-            this.#saldo -= valor;
-        return this.#saldo;
+        this.#saldo -= valor;
+    return this.#saldo;
     }
 
     verSaldo() {
