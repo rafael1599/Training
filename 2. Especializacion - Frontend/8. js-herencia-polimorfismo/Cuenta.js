@@ -31,7 +31,7 @@ export class Cuenta{
     }
 
     retirarDeCuenta(valor) {
-       this._retirarDeCuente(valor, 0);
+       throw new Error("Debe implementar el metodo retirarDeCuenta en su clase ")
     }
     _retirarDeCuenta(valor, comision){
         valor = valor * (1 + comision/100)
