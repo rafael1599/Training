@@ -10,4 +10,13 @@ export class Empleado{
         this.#salario = salario;
         this.#clave = '';
     }
+
+    asignarClave(clave){
+        this.#clave = clave;
+    }
+
+    clave(){
+        return this.#clave;
+    }
+
 }
