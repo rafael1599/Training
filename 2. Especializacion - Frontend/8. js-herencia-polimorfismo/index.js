@@ -1,7 +1,13 @@
 /*Importación de clases*/
+import {Empleado} from './Empleado';
+import {Gerente} from './Gerente';
+import {Director} from './Director'; 
+
+
+
 import {Cliente} from './Cliente.js'
 import {CuentaCorriente} from './CuentaCorriente.js';
-import {CuentaAhorro} from './CuentaAhorro.js';
+import {CuentaAhorro} from './Cuentas/CuentaAhorro.js';
 
 
 const cliente = new Cliente('Leonardo','13804050','123224');
