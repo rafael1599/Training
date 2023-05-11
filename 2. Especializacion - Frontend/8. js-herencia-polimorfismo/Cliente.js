@@ -8,5 +8,14 @@ export class Cliente
         this.nombreCliente = nombreCliente;
         this.dniCliente = dniCliente;
         this.rutCliente = rutCliente;
+        this.#clave = '';
+    }
+
+    asignarClave(clave) {
+        this.#clave = clave;
+    }
+
+    autenticable(clave) {
+        return false;
     }
 }

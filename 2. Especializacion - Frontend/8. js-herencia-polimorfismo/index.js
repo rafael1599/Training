@@ -1,39 +1,25 @@
 /*Importación de clases*/
-import {Empleado} from './Empleado';
-import {Gerente} from './Gerente';
-import {Director} from './Director'; 
-
-
-
 import {Cliente} from './Cliente.js'
-import {CuentaCorriente} from './CuentaCorriente.js';
-import {CuentaAhorro} from './Cuentas/CuentaAhorro.js';
+import { Empleado } from './Empleados/Empleado.js';
+import { Gerente } from './Empleados/Gerente.js';
+import { Director } from './Empleados/Director.js';
+import { SistemaAutenticacion } from './SistemaAutenticacion.js';
 
+//const cliente2 = new Cliente('María','16979808','8989');
+
+const empleado = new Empleado('Juan Perez','1234343',10000);
+empleado.asignarClave('12345');
+console.log(SistemaAutenticacion.login(empleado,'12345'));
+
+const gerente = new Gerente('Pedro Rivas','232344',12000);
+gerente.asignarClave('655');
+console.log(SistemaAutenticacion.login(gerente,'655'));
+
+//const director = new Director('Elena Moreno','232323',15000);
 
 const cliente = new Cliente('Leonardo','13804050','123224');
-const cliente2 = new Cliente('María','16979808','8989');
-
-const CuentaCorrienteLeonardo = new CuentaCorriente(cliente, '1', '001');
-const CuentaAhorroLeonardo = new CuentaAhorro('Leonardo', 01, '001');
-const cuentaDeMaria = new CuentaCorriente(cliente2,'2','002');
-
-let saldo = CuentaCorrienteLeonardo.verSaldo(); 
-
-saldo = CuentaCorrienteLeonardo.depositoEnCuenta(150);
-CuentaCorrienteLeonardo.transferirParaCuenta(parametroValor,cuentaDeMaria);
-
-const saldoMaria = cuentaDeMaria.verSaldo();
-
-console.log('Cuenta de Maria',cuentaDeMaria);
-
-console.log('El Saldo actual (cuentaMaria) '+saldoMaria);
-
-const saldoLeonardo = CuentaCorrienteLeonardo.verSaldo();
-console.log('El Saldo actual (cuentaLeonardo) '+saldoLeonardo);
-console.log(CuentaCorriente.cantidadCuentas);
-
-console.log(CuentaCorriente.cantidadCuentas);
-
+cliente.asignarClave('01111');
+console.log(SistemaAutenticacion.login(cliente,'01111'));
 
 
 
