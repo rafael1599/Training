@@ -1,6 +1,8 @@
 export class SistemaAutenticacion{
     login(empleado, clave){
-        return usuario.autenticable(clave);
-        return empleado.clave == clave;
+        if ("autenticable" in usuario && usuario.autenticable instanceof function)
+            return usuario.autenticable(clave);     
+        else
+            return false;
     }
 }
