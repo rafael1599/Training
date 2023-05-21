@@ -8,7 +8,7 @@ formulario.addEventListener("sunmit", (evento) => {
     console.log(nombre+" - "+email);
     clientServices
     .crearCliente(nombre, email)
-    .then(respuesta => {
+    .then(() => {
         window.location.href = "/screens/registro_completado.html"
-    }).catch(err => console.log(err))
+    }).catch(err => console.log(err));
 })
