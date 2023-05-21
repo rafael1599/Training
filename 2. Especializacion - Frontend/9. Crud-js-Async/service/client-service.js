@@ -12,7 +12,6 @@ export const crearCliente = (nombre, email) => {
 };
 
 const eliminarCliente = (id) => {
-  console.log("Eliminar --> ", id)
   return fetch(`http://localhost:3000/perfil/${id}`, {
     method: "DELETE"
   })
