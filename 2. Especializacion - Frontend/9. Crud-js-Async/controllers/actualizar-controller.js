@@ -29,4 +29,5 @@ formulario.addEventListener("summit", (evento) => {
     const email = document.querySelector("[data-email]").value;
     const url = new URL(window.location);
     const id = url.searchParams.get("id");
-}
+    clientServices.actualizarCliente(nombre, mail, id)
+});
