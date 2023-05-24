@@ -1,41 +1,39 @@
 const listaClientes = () =>
   fetch("http://localhost:3000/perfil").then((respuesta) => respuesta.json());
 
-export const crearCliente = (nombre, email) => {
-  fetch("http://localhost:3000/perfil", {
+const crearCliente = (nombre, email) => {
+  return fetch("http://localhost:3000/perfil", {
     method: "POST",
-    Headers: {
-      "Content-Type": "aplication/json"
-    }, 
-    body: JSON.stringify({nombre, email})
-  })
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ nombre, email, id: uuid.v4() }),
+  });
 };
 
 const eliminarCliente = (id) => {
   return fetch(`http://localhost:3000/perfil/${id}`, {
-    method: "DELETE"
-  })
-}
+    method: "DELETE",
+  });
+};
 
 const detalleCliente = (id) => {
-  return fetch(`http://localhost:3000/perfil/${id}`).then((respuesta) => respuesta.json());
+  return fetch(`http://localhost:3000/perfil/${id}`).then((respuesta) =>
+    respuesta.json()
+  );
+};
 
-}
-
-const actualizarCliente = (nombre, email,id) => {
+const actualizarCliente = (nombre, email, id) => {
   return fetch(`http://localhost:3000/perfil/${id}`, {
-    method: "PUT";
-    Headers: {
-      "ContentType": "application/json"
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify({nombre, email})
+    body: JSON.stringify({ nombre, email }),
   })
-  . then(respuesta => console.log(respuesta))
-  .catch((err) => console.log(err))
-
-  
-
-}
+    .then((respuesta) => respuesta)
+    .catch((err) => console.log(err));
+};
 
 export const clientServices = {
   listaClientes,
@@ -44,6 +42,3 @@ export const clientServices = {
   detalleCliente,
   actualizarCliente,
 };
-
-
-
