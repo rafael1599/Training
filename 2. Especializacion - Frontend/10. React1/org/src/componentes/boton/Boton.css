@@ -1,0 +1,19 @@
+.boton {
+    color: white;
+    margin: 40px 0 38px;
+    background-color: #6278F7;
+    width: 167px;
+    height: 80px;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    align-items: center;
+    text-align: center;
+}
+.boton:hover{
+    color:#95ffd4;
+}

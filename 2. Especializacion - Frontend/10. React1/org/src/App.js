@@ -1,11 +1,14 @@
 import './App.css';
-import Header from './componentes/header/Header';
+import Formulario from './componentes/formulario';
+import Header from './componentes/header';
+
 
 
 function App() {
   return (
-    <div>
+    <div className='app'>
       <Header/>
+      <Formulario/>
       
     </div>
   );
