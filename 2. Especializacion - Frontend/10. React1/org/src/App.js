@@ -1,6 +1,7 @@
 import './App.css';
 import Formulario from './componentes/formulario';
 import Header from './componentes/header';
+import MiOrg from './componentes/miOrg';
 
 
 
@@ -9,7 +10,7 @@ function App() {
     <div className='app'>
       <Header/>
       <Formulario/>
-      
+      <MiOrg/>
     </div>
   );
 }
