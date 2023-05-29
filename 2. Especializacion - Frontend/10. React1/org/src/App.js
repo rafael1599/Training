@@ -57,7 +57,7 @@ function App() {
   return (
     <div className='app'>
       <Header />
-      {mostrarFormulario === true ? <Formulario /> : <></>}
+      {mostrarFormulario === true ? <Formulario equipos = {equipos.map((equipo) => equipo.titulo)}/> : <></>}
       <MiOrg cambiarMostrar={cambiarMostrar} />
       {
         equipos.map((equipo) => <Equipo datos={equipo} key={equipo.titulo} />)
