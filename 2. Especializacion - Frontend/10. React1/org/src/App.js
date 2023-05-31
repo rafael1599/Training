@@ -1,67 +1,125 @@
 import { useState } from 'react';
 import './App.css';
+import Header from "./componentes/header"
 import Formulario from './componentes/formulario';
-import Header from './componentes/header';
 import MiOrg from './componentes/miOrg';
 import Equipo from './componentes/equipo';
-
-
+// import Footer from './componentes/footer';
 
 function App() {
   const [mostrarFormulario, actualizarMostrar] = useState(false)
+  const [colaboradores, actualizarColaboradores] = useState([{
+    equipo: "Front End",
+    foto: "https://github.com/harlandlohora.png",
+    nombre: "Harland Lohora",
+    puesto: "Instructor"
+  },
+  {
+    equipo: "Programación",
+    foto: "https://github.com/genesysaluralatam.png",
+    nombre: "Genesys Rondón",
+    puesto: "Desarrolladora de software e instructora"
+  },
+  {
+    equipo: "UX y Diseño",
+    foto: "https://github.com/JeanmarieAluraLatam.png",
+    nombre: "Jeanmarie Quijada",
+    puesto: "Instructora en Alura Latam"
+  },
+  {
+    equipo: "Programación",
+    foto: "https://github.com/christianpva.png",
+    nombre: "Christian Velasco",
+    puesto: "Head de Alura e Instructor"
+  },
+  {
+    equipo: "Innovación y Gestión",
+    foto: "https://github.com/JoseDarioGonzalezCha.png",
+    nombre: "Jose Gonzalez",
+    puesto: "Dev FullStack"
+  }])
+  //Ternario --> condicion ? seMuestra : noSeMuestra
+  // condicion && seMuestra
 
   const cambiarMostrar = () => {
     actualizarMostrar(!mostrarFormulario)
   }
 
+  //Registrar colaborador
+
+  const registrarColaborador = (colaborador) => {
+    console.log("Nuevo colaborador", colaborador)
+    //Spread operator
+    actualizarColaboradores([...colaboradores, colaborador])
+  }
+
+  //Eliminar colaborador
+  const eliminarColaborador = () => {
+    console.log("Eliminar colaborador")
+  }
+
   //Lista de equipos
   const equipos = [
     {
-      titulo: "Programacion",
+      titulo: "Programación",
       colorPrimario: "#57C278",
       colorSecundario: "#D9F7E9"
     },
     {
-      titulo: "FrontEnd",
+      titulo: "Front End",
       colorPrimario: "#82CFFA",
-      colorSecundario: '#E8F8FF'
+      colorSecundario: "#E8F8FF"
     },
     {
       titulo: "Data Science",
       colorPrimario: "#A6D157",
-      colorSecundario: '#F0F8E2'
+      colorSecundario: "#F0F8E2"
     },
     {
       titulo: "Devops",
       colorPrimario: "#E06B69",
-      colorSecundario: '#FDE7E8'
+      colorSecundario: "#FDE7E8"
     },
     {
-      titulo: "UX Disenio",
+      titulo: "UX y Diseño",
       colorPrimario: "#DB6EBF",
-      colorSecundario: '#FAE9F5'
+      colorSecundario: "#FAE9F5"
     },
     {
-      titulo: "Movil",
+      titulo: "Móvil",
       colorPrimario: "#FFBA05",
-      colorSecundario: '#FFF5D9'
+      colorSecundario: "#FFF5D9"
     },
     {
-      titulo: "Innovacion y Gestion",
+      titulo: "Innovación y Gestión",
       colorPrimario: "#FF8A29",
-      colorSecundario: '#FFEEDF'
+      colorSecundario: "#FFEEDF"
     }
   ]
-
-
   return (
-    <div className='app'>
+    <div>
       <Header />
-      {mostrarFormulario === true ? <Formulario equipos = {equipos.map((equipo) => equipo.titulo)}/> : <></>}
-      <MiOrg cambiarMostrar={cambiarMostrar} />
+      {/* {mostrarFormulario ? <Formulario /> : <></>} */}
       {
-        equipos.map((equipo) => <Equipo datos={equipo} key={equipo.titulo} />)
+        mostrarFormulario && <Formulario
+          equipos={equipos.map((equipo) => equipo.titulo)}
+          registrarColaborador={registrarColaborador}
+        />
       }
+
+      <MiOrg cambiarMostrar={cambiarMostrar} />
+
+      {
+        equipos.map((equipo) => <Equipo
+          datos={equipo}
+          key={equipo.titulo}
+          colaboradores={colaboradores}
+        />
+        )
+      }
+
+      {/* <Footer /> */}
+
 
     </div>
   );
