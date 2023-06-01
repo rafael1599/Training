@@ -10,7 +10,7 @@ const CampoTexto = (props)=>{
 
     return <div className="campo-texto">
         <label>{props.titulo}</label>
-        <input 
+        <input className="campo-texto-color" 
             placeholder={placeholderMod} 
             required = {props.required} 
             value={props.valor}
