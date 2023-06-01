@@ -89,8 +89,9 @@ const Formulario = (props) => {
                 titulo="Color"
                 placeholder = "Ingresar el color en hexadecimal"
                 required
-                valor={puesto}
+                valor={color}
                 actualizarColor={actualizarColor}
+                type = "color"
             />
             <Boton texto="Registrar equipo"/>
         </form>
