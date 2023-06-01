@@ -4,7 +4,7 @@ import Header from "./componentes/header"
 import Formulario from './componentes/formulario';
 import MiOrg from './componentes/miOrg';
 import Equipo from './componentes/equipo';
-// import Footer from './componentes/footer';
+import Footer from './componentes/footer';
 
 function App() {
   const [mostrarFormulario, actualizarMostrar] = useState(false)
@@ -118,7 +118,7 @@ function App() {
         )
       }
 
-      {/* <Footer /> */}
+      <Footer />
 
 
     </div>
