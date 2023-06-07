@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import "../assets/css/componentes/card.css"
-import { buscar, buscarS } from "../api/api"
+import { buscar } from "../api/api"
 import { Link } from "react-router-dom"
 
 const ListPosts = ({ url }) => {
@@ -8,7 +8,6 @@ const ListPosts = ({ url }) => {
 
     useEffect(()=>{
         buscar(url, setPosts)
-        console.log(posts)
     }, [url])
 
     return (
