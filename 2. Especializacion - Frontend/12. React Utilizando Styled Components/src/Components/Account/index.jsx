@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Icono } from "../UI";
+import { Icono, Box, Btn, Saldo, Detalle } from "../UI";
 import styled from "styled-components"
 
 
@@ -19,7 +19,7 @@ const Account = () => {
   };
 
   return (
-    <div className="box">
+    <Box>
       <h2>Cuenta</h2>
       <div style={{ fontSize: "26px", padding: "20px 0" }}>
         Saldo disponible
@@ -27,19 +27,19 @@ const Account = () => {
           <Icono src={dinero} alt="Icono de saldo" />
         </span>
         {toggleState ? (
-          <div className="saldo">
-            <span className="detalle">$</span> 8,621.50
-          </div>
+          <Saldo>
+            <Detalle>$</Detalle> 8,621.50
+          </Saldo>
         ) : null}
       </div>
 
-      <button className="btn" onClick={toggleHandler}>
+      <Btn onClick={toggleHandler}>
         <Icono          
           src={toggleState ? privado : ojo}
           alt="Privacidad de saldo"
         />
-      </button>
-    </div>
+      </Btn>
+    </Box>
   );
 };
 
