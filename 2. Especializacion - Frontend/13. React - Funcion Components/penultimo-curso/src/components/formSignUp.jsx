@@ -11,7 +11,7 @@ import Grid from '@mui/material/Grid';
 
 
 
-function FormSingUp({handleSubmit}){
+function FormSingUp({ handleSubmit }) {
     const [name, setName] = React.useState("")
     const [lastName, setLastName] = React.useState("")
     const [email, setEmail] = React.useState("")
@@ -22,12 +22,22 @@ function FormSingUp({handleSubmit}){
         name: {
             error: false,
             message:
-            "Deben ser al menos 3 caracteres"
+                "Deben ser al menos 3 caracteres"
         }
     })
 
-    function validarNombre(nombre){
-        console.log(nombre)
+    function validarNombre(nombre) {
+        if(nombre.length > 3){
+            return {name:{error: false, message:''}}
+        }else{
+            return{
+                name:{
+                    error: true,
+                    message:
+                        "Deben ser al menos 3 caracteres"
+                }
+            }
+        }
 
     }
 
@@ -36,10 +46,10 @@ function FormSingUp({handleSubmit}){
             onSubmit={(e) => {
                 e.preventDefault()
                 handleSubmit({
-                    name, 
-                    lastName, 
-                    email, 
-                    prom, 
+                    name,
+                    lastName,
+                    email,
+                    prom,
                     nov
                 })
             }}
@@ -68,8 +78,8 @@ function FormSingUp({handleSubmit}){
                         helperText={
                             errors.name.error ? errors.name.message : ""
                         }
-                        
-                        onBlur={(e)=>{
+
+                        onBlur={(e) => {
                             console.log(e.target.value)
                         }}
                     />
