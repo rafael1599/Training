@@ -19,26 +19,56 @@ function FormSingUp({ handleSubmit }) {
     const [nov, setNov] = React.useState(true)
 
     const [errors, setErrors] = React.useState({
-        name: {
+        nombre: {
             error: false,
             message:
-                "Deben ser al menos 3 caracteres"
+                "El nombre debe contener por lo menos 3 caracteres"
+        },
+        apellido: {
+            error: false,
+            message:
+                "El apellido debe contener por lo menos 4 caracteres"
         }
-    })
 
-    function validarNombre(nombre) {
-        if(nombre.length > 3){
-            return {name:{error: false, message:''}}
+    })
+    
+
+    // function validarNombre(nombre) {
+    //     if(nombre.length >= 3){
+    //         return {
+    //             nombre:{
+    //                 error: false, 
+    //                 message:''
+    //             }
+    //         }
+    //     }else{
+    //         return{
+    //             nombre:{
+    //                 error: true,
+    //                 message:
+    //                     "Deben ser al menos 3 caracteres"
+    //             }
+    //         }
+    //     }
+    // }
+
+    function validarApellido(apellido) {
+        if(apellido.length >= 3){
+            return {
+                apellido:{
+                    error: false, 
+                    message:''
+                }
+            }
         }else{
             return{
-                name:{
+                apellido:{
                     error: true,
                     message:
                         "Deben ser al menos 3 caracteres"
                 }
             }
         }
-
     }
 
     return (
@@ -74,14 +104,16 @@ function FormSingUp({ handleSubmit }) {
                             setName(e.target.value)
                         }}
                         value={name}
-                        error={errors.name.error}
-                        helperText={
-                            errors.name.error ? errors.name.message : ""
-                        }
+                        // error={errors.nombre.error}
+                        // helperText={
+                        //     errors.nombre.error ? errors.nombre.message : ""
+                        // }
 
-                        onBlur={(e) => {
-                            console.log(e.target.value)
-                        }}
+                        // onBlur={(e) => {
+                        //     setErrors(
+                        //         validarNombre(e.target.value)
+                        //     )
+                        // }}
                     />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -96,6 +128,16 @@ function FormSingUp({ handleSubmit }) {
                         onChange={(e) => {
                             console.log(e.target.value)
                             setLastName(e.target.value)
+                        }}
+
+                        error={errors.apellido.error}
+                        helperText={
+                            errors.apellido.error ? errors.apellido.message : ""
+                        }
+                        onBlur={(e) =>{
+                            setErrors(
+                                validarApellido(e.target.value)
+                            )   
                         }}
                     />
                 </Grid>
