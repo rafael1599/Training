@@ -9,11 +9,42 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Grid from '@mui/material/Grid';
 
-function FormSingUp() {
+
+
+function FormSingUp({handleSubmit}){
+    const [name, setName] = React.useState("")
+    const [lastName, setLastName] = React.useState("")
+    const [email, setEmail] = React.useState("")
+    const [prom, setProm] = React.useState(true)
+    const [nov, setNov] = React.useState(true)
+
+    const [errors, setErrors] = React.useState({
+        name: {
+            error: false,
+            message:
+            "Deben ser al menos 3 caracteres"
+        }
+    })
+
+    function validarNombre(nombre){
+        console.log(nombre)
+
+    }
+
     return (
         <Box
-            component="form" 
-            noValidate 
+            onSubmit={(e) => {
+                e.preventDefault()
+                handleSubmit({
+                    name, 
+                    lastName, 
+                    email, 
+                    prom, 
+                    nov
+                })
+            }}
+            component="form"
+            noValidate
             // onSubmit={handleSubmit} 
             sx={{ mt: 3 }}
             autoComplete="off"
@@ -26,8 +57,21 @@ function FormSingUp() {
                         required
                         fullWidth
                         id="firstName"
-                        label="First Name"
+                        label="Nombre"
                         autoFocus
+                        onChange={(e) => {
+                            console.log(e.target.value)
+                            setName(e.target.value)
+                        }}
+                        value={name}
+                        error={errors.name.error}
+                        helperText={
+                            errors.name.error ? errors.name.message : ""
+                        }
+                        
+                        onBlur={(e)=>{
+                            console.log(e.target.value)
+                        }}
                     />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -35,9 +79,14 @@ function FormSingUp() {
                         required
                         fullWidth
                         id="lastName"
-                        label="Last Name"
+                        label="Apellido"
                         name="lastName"
                         autoComplete="family-name"
+                        value={lastName}
+                        onChange={(e) => {
+                            console.log(e.target.value)
+                            setLastName(e.target.value)
+                        }}
                     />
                 </Grid>
             </Grid>
@@ -48,6 +97,10 @@ function FormSingUp() {
                 variant="outlined"
                 fullWidth
                 margin='normal'
+                value={email}
+                onChange={(e) => {
+                    setEmail(e.target.value)
+                }}
 
             />
 
@@ -56,7 +109,9 @@ function FormSingUp() {
                     required
                     control={
                         <Switch
-                            defaultChecked />
+                            defaultChecked
+                            onChange={(e) => setProm(e.target.checked)}
+                        />
                     }
                     label="promociones"
                 />
@@ -64,7 +119,9 @@ function FormSingUp() {
                     required
                     control={
                         <Switch
-                            defaultChecked />
+                            defaultChecked
+                            onChange={(e) => setNov(e.target.checked)}
+                        />
                     }
                     label="Novedades"
                 />
@@ -75,6 +132,7 @@ function FormSingUp() {
                 margin="normal">
                 <Button
 
+                    type='submit'
                     variant="contained"
                     endIcon={<SendIcon />}
                 >Enviar</Button>
