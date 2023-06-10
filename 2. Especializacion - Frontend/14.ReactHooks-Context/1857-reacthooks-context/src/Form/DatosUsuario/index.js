@@ -1,32 +1,25 @@
-import React from "react";
+import React,{useState} from "react";
 import { TextField, Button, Box } from "@mui/material";
+import { ValidarEmail, validarPassword } from "./validaciones";
 
-class DatosUsuario extends React.Component {
-  render() {
-    return <>Contenido</>
-  }
-}
-
-const componenteFuncion = () =>{
+const componenteFuncion = () => {
   return <>Contenido</>
 }
 
 const DatosUsuario = () => {
-  constructor(props);
-  this.state = {
-    email: {
-      value: '',
-      valid: true
-    },
-    password: {
-      value: '',
-      valid: true
-    }
-  }
-}
+  const [email, setEmail] = useState({value: "Rafa", valid: true})
+  const [password, setPassword] = useState({value: "", valid: true})
+  // this.state = {
+  //   email: {
+  //     value: '',
+  //     valid: true
+  //   },
+  //   password: {
+  //     value: '',
+  //     valid: true
+  //   }
+  // }
 
-
-render() {
   return (
     <Box
       component="form"
@@ -45,18 +38,25 @@ render() {
         type="email"
         error={false}
         helperText={false && "Ingresa un correo electrónico válido"}
-        value={this.state.email.value}
-        onChange={(input) => this.setState({ email: { value: input.target.value } })}
-      />
+        value={email.value}
+        onChange={(input) =>{
+          const email = input.target.value;
+          const valido = ValidarEmail(email);
+          setEmail({ value: email, valid: valido});
+          }
+        }/>
       <TextField
         label="Contraseña"
         variant="outlined"
         fullWidth
         margin="dense"
         type="password"
-        value={this.state.password.value}
-        onChange={(input) => this.setState({ password: { value: input.target.value } })}
-
+        value={password.value}
+        onChange={(input) =>{
+          const password = input.target.value;
+          setEmail({ value: password, valid: validarPassword(password)});
+          }
+        }
       />
       <Button variant="contained" type="submit">
         Siguiente
@@ -64,6 +64,8 @@ render() {
     </Box>
   );
 }
+
+
 
 
 export default DatosUsuario;
