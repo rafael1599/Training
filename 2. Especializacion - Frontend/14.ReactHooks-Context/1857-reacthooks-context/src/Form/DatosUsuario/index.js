@@ -7,18 +7,15 @@ const componenteFuncion = () => {
 }
 
 const DatosUsuario = () => {
-  const [email, setEmail] = useState({value: "Rafa", valid: true})
-  const [password, setPassword] = useState({value: "", valid: true})
-  // this.state = {
-  //   email: {
-  //     value: '',
-  //     valid: true
-  //   },
-  //   password: {
-  //     value: '',
-  //     valid: true
-  //   }
-  // }
+  const [email, setEmail] = useState({
+    value: "", 
+    valid: null
+  });
+
+  const [password, setPassword] = useState({
+    value: "", 
+    valid: null
+  });
 
   return (
     <Box
@@ -29,6 +26,18 @@ const DatosUsuario = () => {
         justifyContent: "center",
         flexDirection: "column",
       }}
+
+      onSubmit={(e)=>{
+        e.preventDefault();
+        if(email.valid && password.valid){
+          console.log("Siguiente formulario")
+        }else{
+          console.log("Ingrese sus credenciales correctamente")
+        }
+        console.log(email, password)
+      }
+
+      }
     >
       <TextField
         label="Correo electrónico"
@@ -36,25 +45,39 @@ const DatosUsuario = () => {
         fullWidth
         margin="dense"
         type="email"
-        error={false}
-        helperText={false && "Ingresa un correo electrónico válido"}
+        error={email.valid === false}
+        helperText={
+          email.valid === false && "Ingresa un correo electrónico válido"}
         value={email.value}
         onChange={(input) =>{
           const email = input.target.value;
-          const valido = ValidarEmail(email);
-          setEmail({ value: email, valid: valido});
+          setEmail({ 
+            value: email, 
+            valid: ValidarEmail(email)});
           }
         }/>
+
       <TextField
         label="Contraseña"
         variant="outlined"
         fullWidth
         margin="dense"
         type="password"
+
+        error={
+          password.valid === false
+        }
+
+        helperText={
+          password.valid === false && "Ingresa una contraseña válido"
+        }
+
         value={password.value}
         onChange={(input) =>{
           const password = input.target.value;
-          setEmail({ value: password, valid: validarPassword(password)});
+          setPassword({ 
+            value: password, 
+            valid: validarPassword(password)});
           }
         }
       />
