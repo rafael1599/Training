@@ -2,11 +2,11 @@ import React,{useState} from "react";
 import { TextField, Button, Box } from "@mui/material";
 import { ValidarEmail, validarPassword } from "./validaciones";
 
-const componenteFuncion = () => {
-  return <>Contenido</>
-}
+// const componenteFuncion = () => {
+//   return <>Contenido</>
+// }
 
-const DatosUsuario = () => {
+const DatosUsuario = ({ updateStep }) => {
   const [email, setEmail] = useState({
     value: "", 
     valid: null
@@ -31,6 +31,8 @@ const DatosUsuario = () => {
         e.preventDefault();
         if(email.valid && password.valid){
           console.log("Siguiente formulario")
+          updateStep(1);
+
         }else{
           console.log("Ingrese sus credenciales correctamente")
         }
