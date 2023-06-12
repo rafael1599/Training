@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { TextField, Button, Box } from "@mui/material";
-import { validarInput } from "../DatosUsuario/validaciones";
+import { validarInput } from "./validaciones";
 
 const DatosEntrega = ({ updateStep }) => {
   const [address, setAddress] = useState({ value: "", valid: null });
@@ -10,19 +10,18 @@ const DatosEntrega = ({ updateStep }) => {
   return (
     <Box
       component="form"
+      autocomplete="off"
       sx={{
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
       }}
-
       onSubmit={(e) => {
         e.preventDefault();
         updateStep(3);
         console.log(address, city, province);
       }}
-
     >
       <TextField
         label="Dirección"

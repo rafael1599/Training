@@ -1,30 +1,30 @@
 import React, { useState } from "react";
 import { TextField, Button, Box } from "@mui/material";
-
 import {
   validarNombre,
   validarApellidos,
   validarTelefono,
-} from "../DatosUsuario/validaciones";
-const DatosPersonales = ({updateStep}) => {
+} from "./validaciones";
+
+const DatosPersonales = ({ updateStep }) => {
   const [name, setName] = useState({ value: "", valid: null });
   const [lastName, setLastName] = useState({ value: "", valid: null });
   const [phone, setPhone] = useState({ value: "", valid: null });
+
   return (
     <Box
       component="form"
+      autocomplete="off"
       sx={{
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
       }}
-
       onSubmit={(e) => {
         e.preventDefault();
         updateStep(2);
       }}
-
     >
       <TextField
         label="Nombre"
